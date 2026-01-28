@@ -14,10 +14,10 @@
                 extend: {
                     colors: {
                         emp: {
-                            blue: '#009FE3', // Bleu Empruntis (approximatif)
-                            dark: '#0B2341', // Bleu nuit corporate
-                            grey: '#F4F6F8', // Gris clair fond
-                            orange: '#F39200' // Touche d'accent
+                            blue: '#009FE3',
+                            dark: '#0B2341',
+                            grey: '#F4F6F8',
+                            orange: '#F39200'
                         }
                     },
                     fontFamily: {
@@ -45,31 +45,31 @@
             justify-content: center;
             position: relative;
         }
-        /* Animations */
         .fade-up { animation: fadeInUp 0.8s ease-out forwards; opacity: 0; transform: translateY(30px); }
         .delay-1 { animation-delay: 0.2s; }
         .delay-2 { animation-delay: 0.4s; }
         
         @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
         
-        /* Overlays */
         .overlay-blue { background: linear-gradient(135deg, rgba(0, 159, 227, 0.9), rgba(11, 35, 65, 0.8)); }
-        .overlay-dark { background: rgba(11, 35, 65, 0.9); }
+        .overlay-dark { background: rgba(11, 35, 65, 0.95); }
         
-        /* Elements */
         .emp-card {
             background: white;
-            border-top: 5px solid #009FE3;
+            border-left: 5px solid #009FE3;
             box-shadow: 0 10px 30px rgba(0,0,0,0.08);
             transition: transform 0.3s ease;
         }
-        .emp-card:hover { transform: translateY(-5px); border-top-color: #F39200; }
+        .emp-card:hover { transform: translateY(-5px); border-left-color: #F39200; }
         
-        .highlight {
-            background: linear-gradient(120deg, #e0f2fe 0%, #e0f2fe 100%);
-            background-repeat: no-repeat;
-            background-size: 100% 40%;
-            background-position: 0 88%;
+        .keyword-badge {
+            background-color: #F4F6F8;
+            color: #0B2341;
+            padding: 5px 12px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border: 1px solid #e2e8f0;
         }
     </style>
 </head>
@@ -108,7 +108,6 @@
                     </h2>
                 </div>
 
-                <!-- Onglets de valeur ajoutée -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl fade-up delay-1">
                     <div class="bg-white/10 backdrop-blur p-6 rounded-xl border border-white/20 flex items-center gap-5">
                         <div class="h-14 w-14 bg-white text-emp-blue rounded-full flex items-center justify-center text-2xl shadow-lg shrink-0">
@@ -117,10 +116,8 @@
                         <div>
                             <div class="text-xs uppercase opacity-80 font-bold">Mon approche</div>
                             <div class="text-lg font-bold">Technique & Rigoureuse</div>
-                            <div class="text-sm opacity-90">Montage de dossiers complexes</div>
                         </div>
                     </div>
-                    
                     <div class="bg-white/10 backdrop-blur p-6 rounded-xl border border-white/20 flex items-center gap-5">
                         <div class="h-14 w-14 bg-emp-orange text-white rounded-full flex items-center justify-center text-2xl shadow-lg shrink-0">
                             <i class="fa-solid fa-handshake-simple"></i>
@@ -128,142 +125,152 @@
                         <div>
                             <div class="text-xs uppercase opacity-80 font-bold">Mon objectif</div>
                             <div class="text-lg font-bold">Satisfaction Client</div>
-                            <div class="text-sm opacity-90">Accompagnement de A à Z</div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- SLIDE 2 : FORMATION (La caution bancaire) -->
+        <!-- SLIDE 2 : FORMATION (Synthèse) -->
         <section class="slide bg-white">
             <div class="max-w-6xl w-full px-6">
-                <div class="flex flex-col md:flex-row gap-12 items-center">
-                    <div class="md:w-1/2 fade-up">
-                        <h2 class="text-4xl font-bold text-emp-dark mb-6">
-                            Une culture bancaire <span class="text-emp-blue">solide</span>
-                        </h2>
-                        <p class="text-gray-600 text-lg leading-relaxed mb-6">
-                            Mon cursus universitaire ne m'a pas seulement appris les mathématiques. Il m'a donné les clés pour comprendre <strong>comment une banque évalue un dossier</strong>.
-                        </p>
-                        <p class="text-gray-600 text-lg leading-relaxed">
-                            Je parle le même langage que vos partenaires bancaires, ce qui est un atout décisif pour la négociation des taux et des conditions.
-                        </p>
+                <div class="flex flex-col md:flex-row gap-16 items-center">
+                    
+                    <div class="md:w-5/12 fade-up text-right border-r-4 border-emp-blue pr-8">
+                        <h2 class="text-5xl font-bold text-emp-dark mb-2">Back<br>ground</h2>
+                        <h3 class="text-3xl font-light text-emp-blue">Académique</h3>
                     </div>
 
-                    <div class="md:w-1/2 grid gap-4 fade-up delay-1">
+                    <div class="md:w-7/12 grid gap-8 fade-up delay-1">
                         <!-- Master -->
-                        <div class="p-6 bg-emp-grey rounded-xl border-l-4 border-emp-blue">
-                            <div class="flex justify-between items-center mb-2">
-                                <h3 class="font-bold text-xl text-emp-dark">Master Ingénierie Financière</h3>
-                                <span class="text-sm font-bold text-emp-blue bg-blue-100 px-2 py-1 rounded">Bac+5</span>
+                        <div>
+                            <div class="flex justify-between items-end mb-2">
+                                <h4 class="font-bold text-xl text-emp-dark">Master Ingénierie Risques</h4>
+                                <span class="text-4xl font-bold text-gray-100">2025</span>
                             </div>
-                            <p class="text-sm text-gray-500 mb-3">Université de Bordeaux</p>
-                            <div class="flex flex-wrap gap-2 text-sm text-gray-700">
-                                <span class="bg-white px-3 py-1 rounded shadow-sm">Économie du Risque</span>
-                                <span class="bg-white px-3 py-1 rounded shadow-sm">Théorie Financière</span>
-                                <span class="bg-white px-3 py-1 rounded shadow-sm">Marchés & Taux</span>
+                            <div class="flex flex-wrap gap-3">
+                                <span class="keyword-badge">Mécanismes Bancaires</span>
+                                <span class="keyword-badge">Théorie Financière</span>
+                                <span class="keyword-badge">Mathématiques des Taux</span>
+                                <span class="keyword-badge">Analyse de Risque</span>
                             </div>
                         </div>
 
                         <!-- Licence -->
-                        <div class="p-6 bg-white border border-gray-200 rounded-xl">
-                            <div class="flex justify-between items-center mb-2">
-                                <h3 class="font-bold text-lg text-emp-dark">Licence Économie & Gestion</h3>
-                                <span class="text-sm text-gray-400">2023</span>
+                        <div>
+                            <div class="flex justify-between items-end mb-2">
+                                <h4 class="font-bold text-xl text-emp-dark">Licence Économie</h4>
+                                <span class="text-4xl font-bold text-gray-100">2023</span>
                             </div>
-                            <p class="text-sm text-gray-600">
-                                Solides bases en <strong>Banque</strong> et <strong>Microéconomie</strong>. Compréhension des mécanismes de l'assurance emprunteur.
-                            </p>
+                            <div class="flex flex-wrap gap-3">
+                                <span class="keyword-badge">Banque & Marchés</span>
+                                <span class="keyword-badge">Microéconomie</span>
+                                <span class="keyword-badge">Statistiques</span>
+                            </div>
                         </div>
+                        
+                        <p class="text-sm text-gray-500 italic mt-4">
+                            <i class="fa-solid fa-quote-left text-emp-blue mr-2"></i>
+                            Je maîtrise le langage et les logiques de décision des partenaires bancaires.
+                        </p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- SLIDE 3 : EXPÉRIENCES (La preuve par l'action) -->
+        <!-- SLIDE 3 : EXPÉRIENCES (Mots clés) -->
         <section class="slide bg-emp-grey">
             <div class="max-w-6xl w-full px-6">
-                <h2 class="text-3xl font-bold text-center mb-12 fade-up text-emp-dark">Expériences Transposables</h2>
+                <h2 class="text-3xl font-bold text-center mb-16 fade-up text-emp-dark">Expériences Transposables</h2>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 fade-up delay-1">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10 fade-up delay-1">
                     
-                    <!-- SOCGEN : Crédit & Solvabilité -->
-                    <div class="emp-card p-8 rounded-xl">
-                        <div class="flex items-center gap-4 mb-6">
-                            <div class="w-12 h-12 bg-red-100 text-red-600 rounded-full flex items-center justify-center text-xl">
-                                <i class="fa-solid fa-building-columns"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-xl font-bold text-emp-dark">Société Générale</h3>
-                                <p class="text-sm text-gray-500">Vision Banque de Détail</p>
-                            </div>
+                    <!-- SOCGEN -->
+                    <div class="emp-card p-8 rounded-xl bg-white">
+                        <div class="flex justify-between items-center mb-6">
+                            <h3 class="text-xl font-bold text-emp-dark">Société Générale</h3>
+                            <i class="fa-solid fa-building-columns text-2xl text-red-600"></i>
                         </div>
-                        <p class="text-gray-600 mb-6 leading-relaxed">
-                            En contrôle de gestion, j'ai participé à l'<strong>analyse des dossiers de crédit</strong> et à l'évaluation de la <strong>solvabilité</strong> des emprunteurs. Je sais identifier les points forts et les risques d'un dossier client.
-                        </p>
-                        <div class="border-t pt-4">
-                            <span class="text-xs font-bold text-emp-blue uppercase tracking-wide">Atout Courtier :</span>
-                            <p class="text-sm font-medium mt-1">Anticiper les critères de refus des banques.</p>
-                        </div>
+                        <ul class="space-y-4">
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-check text-emp-blue"></i>
+                                <span class="font-bold text-gray-700">Analyse Solvabilité</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-check text-emp-blue"></i>
+                                <span class="font-bold text-gray-700">Critères d'Octroi</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-check text-emp-blue"></i>
+                                <span class="font-bold text-gray-700">Culture "Risque Crédit"</span>
+                            </li>
+                        </ul>
                     </div>
 
-                    <!-- FORSIDES : Rigueur & Synthèse -->
-                    <div class="emp-card p-8 rounded-xl">
-                        <div class="flex items-center gap-4 mb-6">
-                            <div class="w-12 h-12 bg-blue-100 text-emp-blue rounded-full flex items-center justify-center text-xl">
-                                <i class="fa-solid fa-file-contract"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-xl font-bold text-emp-dark">Forsides (Consulting)</h3>
-                                <p class="text-sm text-gray-500">Rigueur & Analyse</p>
-                            </div>
+                    <!-- FORSIDES -->
+                    <div class="emp-card p-8 rounded-xl bg-white">
+                        <div class="flex justify-between items-center mb-6">
+                            <h3 class="text-xl font-bold text-emp-dark">Forsides Consulting</h3>
+                            <i class="fa-solid fa-laptop-code text-2xl text-emp-blue"></i>
                         </div>
-                        <p class="text-gray-600 mb-6 leading-relaxed">
-                            J'ai conçu des <strong>outils de simulation</strong> et produit des synthèses d'aide à la décision. Cette rigueur me permet de monter des plans de financement précis et optimisés (lissage, paliers).
-                        </p>
-                        <div class="border-t pt-4">
-                            <span class="text-xs font-bold text-emp-blue uppercase tracking-wide">Atout Courtier :</span>
-                            <p class="text-sm font-medium mt-1">Ingénierie financière et maîtrise d'Excel.</p>
-                        </div>
+                        <ul class="space-y-4">
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-check text-emp-blue"></i>
+                                <span class="font-bold text-gray-700">Simulations Financières</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-check text-emp-blue"></i>
+                                <span class="font-bold text-gray-700">Rigueur Analytique</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-check text-emp-blue"></i>
+                                <span class="font-bold text-gray-700">Outils d'Aide à la Décision</span>
+                            </li>
+                        </ul>
                     </div>
 
                 </div>
             </div>
         </section>
 
-        <!-- SLIDE 4 : LE MÉTIER (Pourquoi Empruntis) -->
+        <!-- SLIDE 4 : ATOUTS (Verbes d'action) -->
         <section class="slide bg-white">
             <div class="max-w-6xl w-full px-6 text-center">
-                <h2 class="text-3xl font-light text-gray-400 mb-12 fade-up">Mes 3 piliers pour <span class="font-bold text-emp-blue">performer</span></h2>
+                <h2 class="text-3xl font-light text-gray-400 mb-12 fade-up">Ma Valeur Ajoutée</h2>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 fade-up delay-1">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 fade-up delay-1">
                     
-                    <!-- Analyse -->
-                    <div class="p-8 border border-gray-100 rounded-2xl hover:shadow-xl transition group bg-white">
-                        <i class="fa-solid fa-magnifying-glass-chart text-4xl text-gray-300 group-hover:text-emp-blue mb-6 transition"></i>
-                        <h3 class="font-bold text-lg mb-3 text-emp-dark">Diagnostic</h3>
-                        <p class="text-sm text-gray-600 leading-relaxed">
-                            Calculer l'endettement, le reste à vivre et la capacité d'emprunt avec précision pour orienter le client vers la bonne solution.
-                        </p>
+                    <!-- DIAGNOSTIC -->
+                    <div class="p-8 border-2 border-gray-50 rounded-2xl hover:border-emp-blue transition group bg-white">
+                        <i class="fa-solid fa-magnifying-glass-chart text-5xl text-gray-200 group-hover:text-emp-blue mb-6 transition"></i>
+                        <h3 class="font-bold text-xl mb-4 text-emp-dark">Diagnostiquer</h3>
+                        <div class="text-sm font-semibold text-gray-600 space-y-2">
+                            <p>Capacité d'Emprunt</p>
+                            <p>Taux d'Endettement</p>
+                            <p>Reste à Vivre</p>
+                        </div>
                     </div>
 
-                    <!-- Pédagogie -->
-                    <div class="p-8 border border-gray-100 rounded-2xl hover:shadow-xl transition group bg-white">
-                        <i class="fa-solid fa-chalkboard-user text-4xl text-gray-300 group-hover:text-emp-orange mb-6 transition"></i>
-                        <h3 class="font-bold text-lg mb-3 text-emp-dark">Pédagogie</h3>
-                        <p class="text-sm text-gray-600 leading-relaxed">
-                            Vulgariser les concepts (TAEG, garantie, assurance) pour rassurer le client et créer une relation de confiance durable.
-                        </p>
+                    <!-- VULGARISER -->
+                    <div class="p-8 border-2 border-gray-50 rounded-2xl hover:border-emp-orange transition group bg-white">
+                        <i class="fa-solid fa-comments text-5xl text-gray-200 group-hover:text-emp-orange mb-6 transition"></i>
+                        <h3 class="font-bold text-xl mb-4 text-emp-dark">Vulgariser</h3>
+                        <div class="text-sm font-semibold text-gray-600 space-y-2">
+                            <p>Pédagogie Client</p>
+                            <p>Transparence</p>
+                            <p>Réassurance</p>
+                        </div>
                     </div>
 
-                    <!-- Résultat -->
-                    <div class="p-8 border border-gray-100 rounded-2xl hover:shadow-xl transition group bg-white">
-                        <i class="fa-solid fa-bullseye text-4xl text-gray-300 group-hover:text-green-600 mb-6 transition"></i>
-                        <h3 class="font-bold text-lg mb-3 text-emp-dark">Efficacité</h3>
-                        <p class="text-sm text-gray-600 leading-relaxed">
-                            Utiliser ma maîtrise des outils digitaux et ma proactivité pour traiter les dossiers rapidement et réduire les délais.
-                        </p>
+                    <!-- CONVAINCRE -->
+                    <div class="p-8 border-2 border-gray-50 rounded-2xl hover:border-green-500 transition group bg-white">
+                        <i class="fa-solid fa-file-signature text-5xl text-gray-200 group-hover:text-green-500 mb-6 transition"></i>
+                        <h3 class="font-bold text-xl mb-4 text-emp-dark">Convaincre</h3>
+                        <div class="text-sm font-semibold text-gray-600 space-y-2">
+                            <p>Dossiers Solides</p>
+                            <p>Argumentation Chiffrée</p>
+                            <p>Partenaires Bancaires</p>
+                        </div>
                     </div>
 
                 </div>
@@ -286,7 +293,7 @@
 
                 <h2 class="text-4xl md:text-5xl font-bold mb-6">Prêt à transformer l'essai.</h2>
                 <p class="text-xl text-gray-300 mb-10 max-w-2xl mx-auto font-light">
-                    Je ne demande qu'une chose : l'opportunité de vous démontrer ma motivation et ma capacité d'adaptation lors d'un entretien.
+                    Technicité, rigueur et sens du résultat.
                 </p>
                 
                 <div class="flex flex-col md:flex-row justify-center gap-6 text-lg">
